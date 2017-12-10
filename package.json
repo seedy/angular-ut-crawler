@@ -1,0 +1,14 @@
+{
+  "name": "angular-ut-crawler",
+  "version": "1.0.0",
+  "description": "helper tool to crawl angular unit test files",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "seedy",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^4.0.0"
+  }
+}
