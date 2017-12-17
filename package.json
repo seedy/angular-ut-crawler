@@ -1,6 +1,6 @@
 {
   "name": "angular-ut-crawler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "helper tool to crawl angular unit test files",
   "main": "index.js",
   "scripts": {
