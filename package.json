@@ -4,7 +4,7 @@
   "description": "helper tool to crawl angular unit test files",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node index.js"
   },
   "author": "seedy",
   "license": "ISC",
