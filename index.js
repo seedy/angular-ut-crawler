@@ -11,7 +11,7 @@ const service = require('./types/service');
 const pipe = require('./types/pipe');
 // args : 1/ file 2/ (optional) type
 // type is inferred from file ext or class name
-// types : component, service, (pipe, interceptor)
+// types : component, service, pipe, interceptor
 // for components : @Component can help
 
 
@@ -84,10 +84,12 @@ const getFileContent = (type, file) => {
       content.constructor = find.findConstructor(text);
       content.deps = find.getConstrDeps(content.constructor.params);
     }
-    content.decorators = find.getClassDecorators(text);
-    decoratorTypeMatch(type, content.decorators);
+    content.decorators = {
+      classes: find.getClassDecorators(text)
+    };
+    decoratorTypeMatch(type, content.decorators.classes);
     if (type === 'component' || type === 'directive') {
-      content.decorators.push(...find.getPropertyDecorators(text));
+      content.decorators.properties = find.getPropertyDecorators(text);
     }
     return resolve(content);
   });
@@ -136,6 +138,5 @@ const main = () => {
   )
   .catch((err) => errors.stdError(err));
 };
-
 
 main();

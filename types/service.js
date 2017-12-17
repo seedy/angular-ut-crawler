@@ -17,7 +17,7 @@ const handleNoInjectable = (text, contentObj) => {
 };
 
 const handle = (text, contentObj) => {
-  if (!contentObj.decorators.some((decorator) => decorator.name === 'Injectable')) {
+  if (!contentObj.decorators.classes.some((decorator) => decorator.name === 'Injectable')) {
     return handleNoInjectable(text, contentObj);
   }
   let injectableDep = {
