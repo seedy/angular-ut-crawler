@@ -135,6 +135,7 @@ const getPropertyDecorators = (content) => {
     const prop = (exec[4] !== undefined)
     ? exec[4]
     : exec[3];
+    // type ex: Input
     const type = exec[1];
     const modifier = exec[2];
     decorators.push({type, modifier, prop});
